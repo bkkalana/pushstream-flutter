@@ -1,7 +1,7 @@
 name: pushstream
 description: PushStream Flutter SDK for real-time messaging
 version: 1.0.0
-homepage: https://pushstream.io
+homepage: https://pushstream.ceylonitsolutions.online
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

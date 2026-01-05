@@ -23,8 +23,8 @@ class PushStream {
 
   PushStream(
     this.appKey, {
-    this.wsUrl = 'wss://ws.pushstream.io',
-    this.apiUrl = 'https://api.pushstream.io',
+    this.wsUrl = 'wss://ws.pushstream.ceylonitsolutions.online',
+    this.apiUrl = 'https://api.pushstream.ceylonitsolutions.online',
   });
 
   Future<String?> connect() async {

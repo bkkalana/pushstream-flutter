@@ -29,8 +29,8 @@ import 'package:pushstream/pushstream.dart';
 
 final client = PushStream(
   'your-app-key',
-  wsUrl: 'ws://localhost:3001',
-  apiUrl: 'http://localhost:8000',
+  wsUrl: 'wss://ws.pushstream.ceylonitsolutions.online',
+  apiUrl: 'https://api.pushstream.ceylonitsolutions.online',
 );
 ```
 

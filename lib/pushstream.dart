@@ -9,6 +9,7 @@ import 'package:crypto/crypto.dart';
 
 class PushStream {
   final String appKey;
+  final String? appId;
   final String wsUrl;
   final String apiUrl;
   
@@ -23,16 +24,23 @@ class PushStream {
 
   PushStream(
     this.appKey, {
+    this.appId,
     this.wsUrl = 'wss://ws.pushstream.ceylonitsolutions.online',
     this.apiUrl = 'https://api.pushstream.ceylonitsolutions.online',
   });
 
   Future<String?> connect() async {
+    if (appId == null || appKey.isEmpty) {
+      throw StateError('appId and appKey are required');
+    }
+
     final completer = Completer<String?>();
     Timer? timeout;
 
     try {
-      _channel = WebSocketChannel.connect(Uri.parse(wsUrl));
+      _channel = WebSocketChannel.connect(
+        Uri.parse('$wsUrl?app_id=$appId&app_key=$appKey'),
+      );
       
       timeout = Timer(const Duration(seconds: 10), () {
         if (!completer.isCompleted) {
